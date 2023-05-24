@@ -1,0 +1,128 @@
+.container {
+  width: 100vw;
+  max-width: 20%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 50px;
+  display: flex;
+}
+
+.center {
+  margin: 100px auto;
+}
+
+button {
+	text-decoration: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+	  text-decoration: none;
+  }
+}
+
+.fancy-button {
+	display: inline-block;
+	margin: 20px;
+	font-family: 'Heebo', Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	line-height: 24px;
+	color: #4e0b0b;
+	position: relative;
+  cursor: pointer;
+
+	&.bg-gradient1 {
+		text-shadow: 0px 0px 1px #BF4C28;
+	}
+
+	&.bg-gradient2 {
+		text-shadow: 0px 0px 1px #227270;
+	}
+
+	&.bg-gradient3 {
+		text-shadow: 0 0 1px #546082;
+	}
+
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 40px;
+		position: absolute;
+		bottom: -1px;
+		left: 10px;
+		right: 10px;
+		z-index: -1;
+		border-radius: 2em;
+		filter: blur(14px) brightness(0.9);
+		transform-style: preserve-3d;
+		transition: all 0.3s ease-out;
+	}
+	i {
+		margin-top: -2px;
+		font-size: 1.265em;
+		vertical-align: middle;
+	}
+	button {
+		display: inline-block;
+		padding: 16px 20px;
+		border-radius: 50em;
+		position: relative;
+		z-index: 2;
+		will-change: transform, filter;
+		transform-style: preserve-3d;
+		transition: all 0.3s ease-out;
+	}
+	&:focus{
+		color: #915454;
+	}
+	&:hover {
+		color: #a18e8e;
+
+		button {
+			filter: brightness(.9) contrast(1.2);
+			transform: scale(0.96);
+		}
+		&:before {
+			bottom: 3px;
+			filter: blur(6px) brightness(0.8);
+		}
+	}
+	&:active button {
+			filter: brightness(.75) contrast(1.7);
+		}
+	&.pop-onhover {
+		button {
+			border-radius: 4px;
+		}
+		&:before {
+			opacity: 0;
+			bottom: 10px;
+		}
+		&:hover {
+			&:before {
+				bottom: -7px;
+				opacity: 1;
+				filter: blur(16px);
+			}
+			button {
+				// transform: scale(1.03);
+				transform: scale(1);
+			}
+			&:active {
+				button {
+					filter: brightness(1) contrast(1);
+					transform: scale(1);
+					transition: all 0.2s ease-out;
+				}
+				&:before {
+					bottom: 0;
+					filter: blur(5px) brightness(0.85);
+					transition: all 0.2s ease-out;
+				}
+			}
+		}
+	}
+}
