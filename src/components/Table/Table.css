@@ -1,0 +1,16 @@
+.center {
+  text-align: center;
+  margin: 10 auto;
+}
+
+.table-container {
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.space-right {
+  margin-right: 50px;
+}
