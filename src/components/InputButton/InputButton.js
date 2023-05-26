@@ -7,8 +7,9 @@ function InputButton(){
   const [buttonColor, setButtonColor] = useState()
   const [name, setName] = useState()
 
-  function handleClick() {
+  function handleClick(event) {
     setHeadingText(name)
+    event.preventDefault()
   }
 
   function handleMouseOver() {
@@ -26,8 +27,10 @@ function InputButton(){
   return (
     <div>
       <div className="container">
-        <input onChange={handleChange} type="text" placeholder="Type your name" value={name} />
-        <button style={{backgroundColor: buttonColor, cursor: 'pointer'}} onClick={handleClick} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >Submit</button>
+        <form onSubmit={handleClick}>
+          <input onChange={handleChange} type="text" placeholder="Type your name" value={name} />
+          <button type="submit" style={{backgroundColor: buttonColor, cursor: 'pointer'}} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >Submit</button>
+        </form>
       </div>
       <h1>Hello {headingText}</h1>
     </div>
