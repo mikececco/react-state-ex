@@ -29,7 +29,7 @@ function InputButton(){
       <div className="container">
         <form onSubmit={handleClick}>
           <input onChange={handleChange} type="text" placeholder="Say hi to..." value={name} />
-          <button type="submit" style={{backgroundColor: buttonColor, cursor: 'pointer'}} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >Hi to {name}</button>
+          <button type="submit" style={{backgroundColor: buttonColor, cursor: 'pointer'}} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} ><span>Hi to {name}</span></button>
         </form>
       </div>
       <h1>Hi {headingText}</h1>

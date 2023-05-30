@@ -12,18 +12,12 @@ function NameSurname() {
     const {value, name} = event.target
 
     setFullName(prevValue => {
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName
-        }
-      } else {
-        return {
-          fName: prevValue.fName,
-          lName: value
-        }
-      }
-    })
+      return {
+        ...prevValue,
+        [name] : value
+      };
+    });
+    //    setFullName(prevValue => ({ ...prevValue, [name] : value})) shorter version
   }
 
   function handleClick(event) {
@@ -39,14 +33,16 @@ function NameSurname() {
 
   return (
     <div>
-      <div className="container enhanced">
+      <div className="containerr enhanced">
+        <div className="headingg">
+          <h1>Hello {fullName.fName} {fullName.lName}</h1>
+        </div>
         <form onSubmit={handleClick}>
           <input onChange={handleChange} name="fName" placeholder="First Name" value={fullName.fName} />
           <input onChange={handleChange} name="lName" placeholder="Last Name" value={fullName.lName} />
-          <button style={{cursor: 'pointer'}}>Submit</button>
+          <button style={{cursor: 'pointer'}}><span>Submit</span></button>
         </form>
       </div>
-      <h1>Hello {fullName.fName} {fullName.lName}</h1>
     </div>
   )
 }

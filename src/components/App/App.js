@@ -4,6 +4,7 @@ import TimeNow from '../TimeNow/TimeNow';
 import Table from '../Table/Table';
 import InputButton from '../InputButton/InputButton';
 import NameSurname from '../NameSurname/NameSurname'
+import ToDoList from '../ToDoList/ToDoList'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Table />
       <InputButton />
       <NameSurname />
+      <ToDoList />
     </div>
   )
 }
