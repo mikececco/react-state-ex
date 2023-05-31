@@ -18,6 +18,16 @@ function ToDoList() {
     setList("");
   }
 
+  function deleteItem(id) {
+    setItems((prevItems) => {
+      return prevItems.filter(
+        (item, index) => {
+          return index !== id;
+        }
+      )
+    })
+  }
+
   return (
     <div className="containerr">
       <div className="headingg">
@@ -31,7 +41,13 @@ function ToDoList() {
       </div>
       <div>
         <ul>
-          {items.map(item => <ToDoItem text={item}/>)}
+          {items.map((item, index) => (
+            <ToDoItem
+            key={index} //ideally use UUID
+            id={index}
+            text={item}
+            onChecked={deleteItem}/>
+          ))}
         </ul>
       </div>
     </div>
