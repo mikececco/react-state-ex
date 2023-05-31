@@ -5,6 +5,7 @@ import Table from '../Table/Table';
 import InputButton from '../InputButton/InputButton';
 import NameSurname from '../NameSurname/NameSurname'
 import ToDoList from '../ToDoList/ToDoList'
+import RockPaperScissors from '../RockPaperScissors/RockPaperScissors'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <InputButton />
       <NameSurname />
       <ToDoList />
+      <RockPaperScissors />
     </div>
   )
 }
